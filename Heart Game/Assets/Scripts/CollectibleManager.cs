@@ -36,5 +36,10 @@ public class CollectibleManager : MonoBehaviour
     {
         _collectedHearts++;
         DisplayHeartCount();
+        if(_collectedHearts == _totalHearts)
+        {
+            //print("YOU DID IT!");
+            YouWinMenu.Instance.Show();
+        }
     }
 }
