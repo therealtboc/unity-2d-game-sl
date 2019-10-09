@@ -41,5 +41,7 @@ public class CollectibleManager : MonoBehaviour
             //print("YOU DID IT!");
             YouWinMenu.Instance.Show();
         }
+        //Play sound clip as assigned in SoundManager.cs
+        SoundManager.Instance.PlayHeartCollectSound();
     }
 }

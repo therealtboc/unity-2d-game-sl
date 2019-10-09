@@ -9,12 +9,14 @@ public class YouWinMenu : MonoBehaviour
     public static YouWinMenu Instance;
     public GameObject container;
     public Button nextLevelButton;
+    public Button dismissButton;
 
     //Reserved function for checkbox when turned on
     private void OnEnable()
     {
         //This assigns a listener to the previously created button, passing the HandleNextLevel function (as the 'function' of it)
         nextLevelButton.onClick.AddListener(HandleNextLevelPressed);
+        dismissButton.onClick.AddListener(Hide);
     }
 
     //Reserved function for checkbox when turned off
@@ -23,6 +25,7 @@ public class YouWinMenu : MonoBehaviour
     {
         //This disassociates the listener from the button
         nextLevelButton.onClick.RemoveListener(HandleNextLevelPressed);
+        dismissButton.onClick.RemoveListener(Hide);
     }
 
     private void HandleNextLevelPressed()
@@ -41,5 +44,10 @@ public class YouWinMenu : MonoBehaviour
     public void Show()
     {
         container.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        container.SetActive(false);
     }
 }
