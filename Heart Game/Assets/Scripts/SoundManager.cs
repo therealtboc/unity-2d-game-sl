@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip heartCollectSound;
     public AudioClip allHeartCollectSound;
+    public AudioClip deathSound;
 
     private void Awake()
     {
@@ -35,5 +36,11 @@ public class SoundManager : MonoBehaviour
     {
         audioSource2.clip = allHeartCollectSound;
         audioSource2.Play();
+    }
+
+    public void PlayDeathSound()
+    {
+        audioSource.clip = deathSound;
+        audioSource.Play();
     }
 }
