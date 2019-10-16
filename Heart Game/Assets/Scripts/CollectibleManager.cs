@@ -39,6 +39,21 @@ public class CollectibleManager : MonoBehaviour
         if(_collectedHearts == _totalHearts)
         {
             //print("YOU DID IT!");
+            SoundManager.Instance.PlayAllHeartCollectSound();
+            YouWinMenu.Instance.Show();
+        }
+        //Play sound clip as assigned in SoundManager.cs
+        SoundManager.Instance.PlayHeartCollectSound();
+    }
+
+    public void HandleAllHeartCollected()
+    {
+        _collectedHearts = _totalHearts;
+        DisplayHeartCount();
+        if (_collectedHearts == _totalHearts)
+        {
+            //print("YOU DID IT!");
+            SoundManager.Instance.PlayAllHeartCollectSound();
             YouWinMenu.Instance.Show();
         }
         //Play sound clip as assigned in SoundManager.cs
