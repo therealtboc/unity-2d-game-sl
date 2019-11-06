@@ -19,7 +19,7 @@ public class CollectibleManager : MonoBehaviour
 
     private void Start()
     {
-        _totalHearts = FindObjectsOfType<Collectible>().Length;     //Not viable for larger implementations, think about calling from arrays
+        _totalHearts = FindObjectsOfType<Coin>().Length;     //Not viable for larger implementations, think about calling from arrays
         DisplayHeartCount();
     }
 
@@ -46,6 +46,7 @@ public class CollectibleManager : MonoBehaviour
         SoundManager.Instance.PlayHeartCollectSound();
     }
 
+   
     public void HandleAllHeartCollected()
     {
         _collectedHearts = _totalHearts;

@@ -20,11 +20,9 @@ public class Collectible : MonoBehaviour
     }
 
     //This function destroys the instance of collectible
-    void HandleCollected()
+    public virtual void HandleCollected()
     {
         _hasBeenCollected = true;                               //Setting this boolean to true sets this as "collected"
-        //print("Handle the pickup");
-        CollectibleManager.Instance.HandleHeartCollected();
         Destroy(gameObject);
     }
 }
